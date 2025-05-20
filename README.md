@@ -27,4 +27,3 @@ docker pull rahulsharma9001/assignment-1
 ```
 
 
-Owner - **Rahul Sharma**
