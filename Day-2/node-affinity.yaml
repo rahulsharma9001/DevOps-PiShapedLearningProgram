@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: day2-app-affinity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: day2-app
+  template:
+    metadata:
+      labels:
+        app: day2-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - minikube
+      tolerations:
+        - key: "example-key"
+          operator: "Exists"
+          effect: "NoSchedule"
+      containers:
+        - name: day2-app
+          image: rahulsharma9001/assignment-1:v1
+          ports:
+            - containerPort: 8080

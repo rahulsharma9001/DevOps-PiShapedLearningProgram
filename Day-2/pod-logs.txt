@@ -1,0 +1,2 @@
+NAME                                READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+day2-app-combined-d959664c8-56lr2   1/1     Running   0          17m   10.244.0.4   minikube   <none>           <none>
