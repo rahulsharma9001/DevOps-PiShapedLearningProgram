@@ -48,6 +48,8 @@ helm install app-staging . -f values-staging.yaml  # 2 replicas, info logging
 # Production
 helm install app-prod . -f values-prod.yaml    # 5 replicas, error logging, HPA enabled
 
+```
+
 
 ## 2. How Does Helm Simplify Deployment Rollback During a Production Incident?
 
@@ -62,3 +64,4 @@ Helm automatically stores the history of every release, including revision numbe
 
 ```bash
 helm history <release-name>
+```
