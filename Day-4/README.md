@@ -48,3 +48,17 @@ helm install app-staging . -f values-staging.yaml  # 2 replicas, info logging
 # Production
 helm install app-prod . -f values-prod.yaml    # 5 replicas, error logging, HPA enabled
 
+
+## 2. How Does Helm Simplify Deployment Rollback During a Production Incident?
+
+In real-world Kubernetes environments, production incidents can arise due to misconfigurations, failed upgrades, or bad image deployments. Helm provides a powerful and safe rollback mechanism to address these scenarios quickly and efficiently.
+
+---
+
+## ✅ Key Rollback Features
+
+### 1. **Release History Tracking**
+Helm automatically stores the history of every release, including revision numbers, timestamps, and descriptions.
+
+```bash
+helm history <release-name>
